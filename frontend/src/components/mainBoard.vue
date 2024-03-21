@@ -18,6 +18,5 @@ import rightPanel from './rightPanel.vue';
 .main-board{
     display: flex;
     flex-direction: row;
-
 }
 </style>./creating_Board.vue

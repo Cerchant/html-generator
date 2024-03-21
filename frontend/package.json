@@ -9,10 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.4.21"
+    "bootstrap": "^5.3.3",
+    "vue": "^3.4.21",
+    "vue-drag-resize": "^1.5.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
+    "expose-loader": "^5.0.0",
     "vite": "^5.1.6"
   }
 }

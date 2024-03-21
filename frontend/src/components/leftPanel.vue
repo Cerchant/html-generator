@@ -1,17 +1,7 @@
 
 <template>
         <div class="left-panel">
-            <label class="input-file">
-	   	        <input type="file" name="file">		
-	   	        <span></span>
- 	        </label>
-            
-            <div class="button-add">
-                
-            </div>
-            <div class="button-add">
-                
-            </div>
+
         </div>
    
 </template>
@@ -20,7 +10,7 @@
 <style scoped>
 .left-panel{
     background-color: #BABDBF;
-    width: 134px;
+    width: 383px;
     height: 100%;
     min-height: 100vh;
 }
@@ -42,7 +32,7 @@
 	border: none;
 }
 .input-file span::before{
-    
+
 }
 
 .input-file input[type=file]{
