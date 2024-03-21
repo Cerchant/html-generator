@@ -1,3 +1,15 @@
+<script>
+export default{
+    methods:{
+        rect(){
+            const rectangle = document.querySelector('.js-board');
+            console.log(rectangle);
+            rectangle.style.display = 'block';
+        }
+    }
+}
+</script>
+
 <template>
 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start top">
     
@@ -12,9 +24,8 @@
                 Формы
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><button class="dropdown-item" href="#">Текст</button></li>
+                <li><button class="dropdown-item" @click="rect()" href="#">Прямоугольник</button></li>
             </ul>
             </div>
 
@@ -41,6 +52,8 @@
   
 
   </template>
+
+
 
   <style>
 
