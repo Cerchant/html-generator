@@ -1,7 +1,6 @@
 
 <template>
         <div class="left-panel">
-
         </div>
    
 </template>

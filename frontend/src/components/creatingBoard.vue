@@ -1,6 +1,6 @@
 <template>
     <div class="creating-board">
-        <div class="rect  js-board"></div>
+        <div class="rect  "></div>
 
     </div>
 

@@ -8,10 +8,14 @@ import App from './App.vue';
 // Vue.use(Bootstrap);
 import 'bootstrap/dist/js/bootstrap.js';
 
-import Vue from 'vue';
-import VueDragResize from 'vue-drag-resize';
 
-Vue.component('vue-drag-resize', VueDragResize)
+import DraggableResizableVue from 'draggable-resizable-vue3';
+
+const app = createApp(App)
+
+app.use(DraggableResizableVue)
+
+app.mount('#app')
 
 
-createApp(App).mount('#app')
+//createApp(App).mount('#app')
