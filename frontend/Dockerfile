@@ -1,20 +1,36 @@
-# Use an official Node.js runtime as the base image
-FROM node:14
+# FROM node:lts-alpine
 
-# Set the working directory in the container
+# # устанавливаем простой HTTP-сервер для статики
+# RUN npm install -g http-server
+
+# # делаем каталог 'app' текущим рабочим каталогом
+# WORKDIR /app
+
+# # копируем оба 'package.json' и 'package-lock.json' (если есть)
+# COPY package*.json ./
+
+# # устанавливаем зависимости проекта
+# RUN npm install
+
+# # копируем файлы и каталоги проекта в текущий рабочий каталог (т.е. в каталог 'app')
+# COPY . .
+
+# # собираем приложение для production с минификацией
+# RUN npm run build
+
+# EXPOSE 8080
+# CMD [ "http-server", "dist" ]
+
+# этап сборки (build stage)
+FROM node:lts-alpine as build-stage
 WORKDIR /app
-
-# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
-
-# Copy the frontend source code to the working directory
 COPY . .
+RUN npm run build
 
-# Expose the port the app runs on
-EXPOSE 3000
-
-# Command to start the app
-CMD ["npm", "run", "start"]
+# этап production (production-stage)
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
