@@ -1,14 +1,15 @@
 <script setup>
 import mainBoard from './components/mainBoard.vue';
 import page_header from './components/page_header.vue';
-import topPanel from './components/topPanel.vue';
+
+import testHeader from './components/testHeader.vue';
 
 </script>
 
 <template>
   <page_header ></page_header>
-  <main>
-    <topPanel></topPanel>
+  <main> 
+    <testHeader></testHeader> 
     <mainBoard></mainBoard>
   </main>
 </template>
